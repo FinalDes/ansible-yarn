@@ -1,2 +1,21 @@
 ---
 # tasks file for ansible-yarn
+- name: install dependencies
+  apt:
+    name: apt-transport-https
+    state: latest
+- name: add yarn key
+  apt_key:
+    url: https://dl.yarnpkg.com/debian/pubkey.gpg
+    state: present
+    id: 1646B01B86E50310
+- name: add yarn repo
+  apt_repository:
+    repo: 'deb https://dl.yarnpkg.com/debian/ stable main'
+    state: present
+    filename: 'yarn'
+    update_cache: yes
+- name: install packages
+  apt:
+    name: yarn
+    state: latest
