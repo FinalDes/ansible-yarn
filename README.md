@@ -1,4 +1,4 @@
-Yarn
+Yarn [![Build Status](https://travis-ci.org/FinalDes/ansible-yarn.svg?branch=master)](https://travis-ci.org/FinalDes/ansible-yarn)
 =========
 
 Install yarn package manager
